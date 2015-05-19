@@ -15,7 +15,9 @@ namespace Models
         public string City { get; set; }
         public string Email { get; set; }
         public string PhoneNo { get; set; }
+        public string SSN { get; set; }
         public List<Account> Accounts { get; set; }
+        public string CustomerAsString { get; set; }
 
         public Customer()
         {
