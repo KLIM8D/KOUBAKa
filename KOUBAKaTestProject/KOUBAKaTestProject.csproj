@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>316ee7cd-1492-466d-a827-13e8b1e12644</ProjectGuid>
+    <ProjectGuid>{DADC9055-DF1D-4069-8BDC-11D1209EC1BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KOUBAKaTestProject</RootNamespace>
