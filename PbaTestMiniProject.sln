@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KAUBAKaConsole", "KAUBAKaConsole\KAUBAKaConsole.csproj", "{1757F3EA-9038-4ECD-B5F5-27FE0D39A0F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KOUBAKaTestProject", "KOUBAKaTestProject\KOUBAKaTestProject.csproj", "{DADC9055-DF1D-4069-8BDC-11D1209EC1BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1757F3EA-9038-4ECD-B5F5-27FE0D39A0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1757F3EA-9038-4ECD-B5F5-27FE0D39A0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1757F3EA-9038-4ECD-B5F5-27FE0D39A0F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADC9055-DF1D-4069-8BDC-11D1209EC1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADC9055-DF1D-4069-8BDC-11D1209EC1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADC9055-DF1D-4069-8BDC-11D1209EC1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADC9055-DF1D-4069-8BDC-11D1209EC1BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
