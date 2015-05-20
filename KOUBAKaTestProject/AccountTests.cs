@@ -89,7 +89,7 @@ namespace KOUBAKaTestProject
         {
             double toWithdraw = 1231;
             double beforeWithdraw = _oldChildFirstAccount.Balance;
-            double expected = _youngChildFirstAccount.Balance - toWithdraw;
+            double expected =_oldChildFirstAccount.Balance - toWithdraw;
             _oldChildFirstAccount.Withdraw(toWithdraw, "To a good friend!");
             Assert.AreNotEqual(beforeWithdraw, _oldChildFirstAccount.Balance);
             Assert.AreEqual(expected, _oldChildFirstAccount.Balance);

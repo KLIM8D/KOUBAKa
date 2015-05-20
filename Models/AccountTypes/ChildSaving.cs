@@ -37,7 +37,7 @@ namespace Models.AccountTypes
                 return false;
 
             var depositedThisYear = base.Transactions.Where(x => x.TimeOfTransaction.Year == DateTime.Now.Year).Sum(y => y.Amount);
-            if (amount + depositedThisYear < base.DepositLimit)
+            if (amount + depositedThisYear <= base.DepositLimit)
             {
                 var t = new Transaction
                         {
