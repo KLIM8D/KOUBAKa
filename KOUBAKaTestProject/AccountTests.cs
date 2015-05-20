@@ -10,7 +10,7 @@ namespace KOUBAKaTestProject
     /// <summary>
     /// Summary description for AccountTests
     /// </summary>
-    [TestFixture]
+    [SetUpFixture]
     public class AccountTests
     {
         private Customer _youngChildCustomer;
@@ -50,7 +50,7 @@ namespace KOUBAKaTestProject
             };
             #endregion
         }
-        [TestCase]
+        [Test]
         public void YoungChildInvalidDeposit()
         {
             double toDeposit = 5001;
@@ -58,7 +58,7 @@ namespace KOUBAKaTestProject
             _youngChildFirstAccount.Deposit(toDeposit, "Happy birthday!");
             Assert.AreEqual(beforeDeposit, _youngChildFirstAccount.Balance);
         }
-        [TestCase]
+        [Test]
         public void YoungChildValidDeposit()
         {
             double toDeposit = 5000;
@@ -68,7 +68,7 @@ namespace KOUBAKaTestProject
             Assert.AreNotEqual(beforeDeposit, _youngChildFirstAccount.Balance);
             Assert.AreEqual(expected, _youngChildFirstAccount.Balance);
         }
-        [TestCase]
+        [Test]
         public void ChildInvalidWithdraw()
         {
             double toWithdraw = 1200;
@@ -76,7 +76,7 @@ namespace KOUBAKaTestProject
             _youngChildFirstAccount.Withdraw(toWithdraw, "To a good friend!");
             Assert.AreEqual(expected, _youngChildFirstAccount.Balance);
         }
-        [TestCase]
+        [Test]
         public void ChildValidWithdraw()
         {
             double toWithdraw = 1231;
