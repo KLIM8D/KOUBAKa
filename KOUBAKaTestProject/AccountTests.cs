@@ -20,6 +20,7 @@ namespace KOUBAKaTestProject
         private ChildSaving _oldChildFirstAccount;
         public AccountTests()
         {
+            #region ctor
             _youngChildCustomer = new Customer()
             {
                 DateOfBirth = DateTime.Now.AddYears(-15)
@@ -37,15 +38,48 @@ namespace KOUBAKaTestProject
             };
             _oldChildFirstAccount = new ChildSaving()
             {
-
+                AccountNo = "54321",
+                Balance = 8754,
+                InterestRate = 0.25,
+                Owner = _oldChildCustomer
             };
+            #endregion
         }
         [TestCase]
-        public void TestMethod1()
+        public void YoungChildInvalidDeposit()
         {
-            //
-            // TODO: Add test logic here
-            //
+            double toDeposit = 5001;
+            double beforeDeposit = _youngChildFirstAccount.Balance;
+            _youngChildFirstAccount.Deposit(toDeposit, "Happy birthday!");
+            Assert.AreEqual(beforeDeposit, _youngChildFirstAccount.Balance);
+        }
+        [TestCase]
+        public void YoungChildValidDeposit()
+        {
+            double toDeposit = 4999;
+            double beforeDeposit = _youngChildFirstAccount.Balance;
+            double expected = _youngChildFirstAccount.Balance + toDeposit;
+            _youngChildFirstAccount.Deposit(toDeposit, "Happy birthday!");
+            Assert.AreNotEqual(beforeDeposit, _youngChildFirstAccount.Balance);
+            Assert.AreEqual(expected, _youngChildFirstAccount.Balance);
+        }
+        [TestCase]
+        public void ChildInvalidWithdraw()
+        {
+            double toWithdraw = 1200;
+            double expected = _youngChildFirstAccount.Balance;
+            _youngChildFirstAccount.Withdraw(toWithdraw, "To a good friend!");
+            Assert.AreEqual(expected, _youngChildFirstAccount.Balance);
+        }
+        [TestCase]
+        public void ChildValidWithdraw()
+        {
+            double toWithdraw = 1231;
+            double beforeWithdraw = _oldChildFirstAccount.Balance;
+            double expected = _youngChildFirstAccount.Balance - toWithdraw;
+            _oldChildFirstAccount.Withdraw(toWithdraw, "To a good friend!");
+            Assert.AreNotEqual(beforeWithdraw, _oldChildFirstAccount.Balance);
+            Assert.AreEqual(expected, _oldChildFirstAccount.Balance);
         }
     }
 }
