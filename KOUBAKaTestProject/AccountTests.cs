@@ -36,14 +36,18 @@ namespace KOUBAKaTestProject
                 AccountNo = "12345",
                 Balance = 10000,
                 InterestRate = 0.25,
-                Owner = _youngChildCustomer
+                Owner = _youngChildCustomer,
+                DepositLimit = 5000,
+                Transactions = new List<Transaction>()
             };
             _oldChildFirstAccount = new ChildSaving()
             {
                 AccountNo = "54321",
                 Balance = 8754,
                 InterestRate = 0.25,
-                Owner = _oldChildCustomer
+                Owner = _oldChildCustomer,
+                DepositLimit = 5000,
+                Transactions = new List<Transaction>()
             };
             #endregion
         }
