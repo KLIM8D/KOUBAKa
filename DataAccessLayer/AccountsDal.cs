@@ -11,7 +11,6 @@ namespace DataAccessLayer
     {
         public static void AddAccount(string accountNo, double balance, double interestRate, string customerSsn, double depositLimit, string type)
         {
-            var doc = new XDocument("Data/Accounts.xml");
         }
     }
 }

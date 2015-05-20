@@ -20,12 +20,16 @@ namespace KOUBAKaTestProject
         private ChildSaving _oldChildFirstAccount;
         public AccountTests()
         {
-            #region ctor
+        }
+        private void Setup()
+        {
+            #region SetUp
             _youngChildCustomer = new Customer()
             {
                 DateOfBirth = DateTime.Now.AddYears(-15)
             };
-            _oldChildCustomer = new Customer() {
+            _oldChildCustomer = new Customer()
+            {
                 DateOfBirth = DateTime.Now.AddYears(-19)
             };
 
@@ -48,6 +52,7 @@ namespace KOUBAKaTestProject
         [TestCase]
         public void YoungChildInvalidDeposit()
         {
+            Setup();
             double toDeposit = 5001;
             double beforeDeposit = _youngChildFirstAccount.Balance;
             _youngChildFirstAccount.Deposit(toDeposit, "Happy birthday!");
@@ -56,7 +61,8 @@ namespace KOUBAKaTestProject
         [TestCase]
         public void YoungChildValidDeposit()
         {
-            double toDeposit = 4999;
+            Setup();
+            double toDeposit = 5000;
             double beforeDeposit = _youngChildFirstAccount.Balance;
             double expected = _youngChildFirstAccount.Balance + toDeposit;
             _youngChildFirstAccount.Deposit(toDeposit, "Happy birthday!");
@@ -66,6 +72,7 @@ namespace KOUBAKaTestProject
         [TestCase]
         public void ChildInvalidWithdraw()
         {
+            Setup();
             double toWithdraw = 1200;
             double expected = _youngChildFirstAccount.Balance;
             _youngChildFirstAccount.Withdraw(toWithdraw, "To a good friend!");
@@ -74,6 +81,7 @@ namespace KOUBAKaTestProject
         [TestCase]
         public void ChildValidWithdraw()
         {
+            Setup();
             double toWithdraw = 1231;
             double beforeWithdraw = _oldChildFirstAccount.Balance;
             double expected = _youngChildFirstAccount.Balance - toWithdraw;
