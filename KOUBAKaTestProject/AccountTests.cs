@@ -21,8 +21,9 @@ namespace KOUBAKaTestProject
         public AccountTests()
         {
         }
+
         [SetUp]
-        private void Setup()
+        public void Setup()
         {
             #region SetUp
             _youngChildCustomer = new Customer()
@@ -50,6 +51,7 @@ namespace KOUBAKaTestProject
             };
             #endregion
         }
+
         [Test]
         public void YoungChildInvalidDeposit()
         {
@@ -58,6 +60,7 @@ namespace KOUBAKaTestProject
             _youngChildFirstAccount.Deposit(toDeposit, "Happy birthday!");
             Assert.AreEqual(beforeDeposit, _youngChildFirstAccount.Balance);
         }
+
         [Test]
         public void YoungChildValidDeposit()
         {
@@ -68,6 +71,7 @@ namespace KOUBAKaTestProject
             Assert.AreNotEqual(beforeDeposit, _youngChildFirstAccount.Balance);
             Assert.AreEqual(expected, _youngChildFirstAccount.Balance);
         }
+
         [Test]
         public void ChildInvalidWithdraw()
         {
@@ -76,6 +80,7 @@ namespace KOUBAKaTestProject
             _youngChildFirstAccount.Withdraw(toWithdraw, "To a good friend!");
             Assert.AreEqual(expected, _youngChildFirstAccount.Balance);
         }
+
         [Test]
         public void ChildValidWithdraw()
         {
