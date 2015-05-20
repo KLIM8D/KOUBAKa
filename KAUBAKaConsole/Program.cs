@@ -28,20 +28,20 @@ namespace KAUBAKaConsole
                         string newArg = arg.Remove(0, 6);
                         if (newArg.StartsWith("create customer"))
                         {
-                            string customerStr = newArg.Remove(0, 15);
+                            string _customerStr = newArg.Remove(0, 15);
 
-                            //var customerArr = customerStr.Split(',');
+                            var _customerArr = _customerStr.Split(',');
 
                             /* Til test */
-                            var _customerArr = new string[8];
-                            _customerArr[0] = "Testname";
-                            _customerArr[1] = "01-01-1980";
-                            _customerArr[2] = "Test street";
-                            _customerArr[3] = "9000";
-                            _customerArr[4] = "Aalborg";
-                            _customerArr[5] = "test@test.dk";
-                            _customerArr[6] = "12345678";
-                            _customerArr[7] = "010180-1234";
+                            //var _customerArr = new string[8];
+                            //_customerArr[0] = "Testname";
+                            //_customerArr[1] = "01-01-1980";
+                            //_customerArr[2] = "Test street";
+                            //_customerArr[3] = "9000";
+                            //_customerArr[4] = "Aalborg";
+                            //_customerArr[5] = "test@test.dk";
+                            //_customerArr[6] = "12345678";
+                            //_customerArr[7] = "010180-1234";
 
                             CustomerBusinessLogic.CreateCustomer(
                                 _customerArr[0],
@@ -61,7 +61,7 @@ namespace KAUBAKaConsole
                         }
                         else if (newArg.StartsWith("get account"))
                         {
-                            string accountNo = newArg.Remove(0, 12);
+                            //string accountNo = newArg.Remove(0, 12);
                         }
                         else if (newArg.StartsWith("get customer"))
                         {
